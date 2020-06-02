@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Copyright>&amp;copy CrmNx Team 2020</Copyright>
+    <Authors>CrmNx Team</Authors>
+    <PackageId>Demo.NetLibrary.Sample</PackageId>
+  </PropertyGroup>
+
+    <PropertyGroup Label="Assembly Versioning">
+        <VersionMajor>0</VersionMajor>
+        <VersionMinor>1</VersionMinor>
+        <Build>$([System.DateTime]::Now.Date.Subtract($([System.DateTime]::Parse(`2000-01-01`))).TotalDays)</Build>
+        <Revision>$([System.Convert]::ToUInt16( $([MSBuild]::Divide($([System.DateTime]::Now.TimeOfDay.TotalSeconds), 2 )) ))</Revision>
+        <AssemblyVersion>$(VersionMajor).$(VersionMinor).$(Build).$(Revision)</AssemblyVersion>
+        <FileVersion>$(AssemblyVersion)</FileVersion>
+        <InformationalVersion>$(AssemblyVersion)-preview</InformationalVersion>
+        <Version>$(VersionMajor).$(VersionMinor).$(Build).$(Revision)-preview</Version>
+    </PropertyGroup>
+
+</Project>
