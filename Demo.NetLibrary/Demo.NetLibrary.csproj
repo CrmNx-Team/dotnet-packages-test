@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Copyright>&amp;copy CrmNx Team 2020</Copyright>
-    <Authors>CrmNx Team</Authors>
-    <PackageId>Demo.NetLibrary.Sample</PackageId>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <Copyright>&amp;copy CrmNx Team 2020</Copyright>
+        <Authors>CrmNx Team</Authors>
+        <PackageId>Demo.NetLibrary.Sample</PackageId>
+        <RepositoryUrl>https://github.com/CrmNx-Team/dotnet-packages-test.git</RepositoryUrl>
+    </PropertyGroup>
 
     <PropertyGroup Label="Assembly Versioning">
         <VersionMajor>0</VersionMajor>
