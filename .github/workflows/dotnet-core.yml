@@ -18,9 +18,9 @@ jobs:
       with:
         dotnet-version: 3.1.300
       env:
-          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
-    #- name: Install dependencies
-    #  run: dotnet restore
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
+    - name: Install dependencies
+      run: dotnet restore
     - name: Add GPR Source using nuget.exe
       run: dotnet nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anangaur/index.json -Username ttkoma -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Build
