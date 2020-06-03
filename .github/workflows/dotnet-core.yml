@@ -19,10 +19,10 @@ jobs:
         dotnet-version: 3.1.300
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
-    - name: Install dependencies
-      run: dotnet restore --ignore-failed-sources
     - name: Add GPR Source using nuget.exe
-      run: dotnet nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anangaur/index.json -Username ttkoma -Password ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget sources update -name "github" -Source https://nuget.pkg.github.com/CRMNX-TEAM/index.json -Username ttkoma -Password ${{ secrets.GITHUB_TOKEN }}
+    - name: Install dependencies
+      run: dotnet restore # --source nuget.org #--ignore-failed-sources
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
@@ -30,4 +30,4 @@ jobs:
     - name: Pack
       run: dotnet pack -c Release
     - name: Nuget push
-      run: dotnet nuget push "bin/Release/*.nupkg" --source "GPR" -SkipDuplicate
+      run: dotnet nuget push "bin/Release/*.nupkg" --source "github" --skip-duplicate
