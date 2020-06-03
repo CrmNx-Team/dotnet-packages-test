@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore --ignore-failed-sources
     - name: Add GPR Source using nuget.exe
       run: dotnet nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anangaur/index.json -Username ttkoma -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Build
