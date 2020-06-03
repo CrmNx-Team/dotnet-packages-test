@@ -18,9 +18,9 @@ jobs:
       with:
         dotnet-version: 3.1.300
       env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}  
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
     - name: Add GITHUB package repository Source
-      run: dotnet nuget update source github --source https://nuget.pkg.github.com/TTKOMA/index.json --username ttkoma --password ${GITHUB_TOKEN} --store-password-in-clear-text
+      run: dotnet nuget update source github --source https://nuget.pkg.github.com/TTKOMA/index.json --username ttkoma --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
     - name: Install dependencies
       run: dotnet restore
     - name: Build
@@ -30,4 +30,4 @@ jobs:
     - name: Pack
       run: dotnet pack -c Release
     - name: Nuget push
-      run: dotnet nuget push "**/bin/Release/*.nupkg" --source github --skip-duplicate -k ${GITHUB_TOKEN}
+      run: dotnet nuget push "**/bin/Release/*.nupkg" --source github --skip-duplicate
