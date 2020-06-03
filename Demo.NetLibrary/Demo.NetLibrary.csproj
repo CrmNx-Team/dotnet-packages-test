@@ -6,7 +6,7 @@
         <Copyright>&amp;copy CrmNx Team 2020</Copyright>
         <Authors>CrmNx Team</Authors>
         <PackageId>Demo.NetLibrary.Sample</PackageId>
-        <RepositoryUrl>https://github.com/CrmNx-Team/dotnet-packages-test.git</RepositoryUrl>
+        <RepositoryUrl>https://github.com/ttkoma/dotnet-packages-test.git</RepositoryUrl>
     </PropertyGroup>
 
     <PropertyGroup Label="Assembly Versioning">
